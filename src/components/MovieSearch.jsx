@@ -57,7 +57,8 @@ function MovieSearch() {
         genre: movie.Genre?.join(', ') || 'Unknown',
         watched: false,
         rating: 0,
-        review: ''
+        review: '',
+        poster: movie.Poster
       }
     });
   };
@@ -90,6 +91,8 @@ function MovieSearch() {
             <p>{movie.Plot || 'No description available'}</p>
             <p>Year: {movie.Year}</p>
             <p>Genre: {movie.Type || 'Unknown'}</p>
+            <img src={movie.Poster} alt="" />
+            <br />
             <button onClick={() => handleAddToWatchlist(movie)}>Add to Watchlist</button>
           </div>
         ))

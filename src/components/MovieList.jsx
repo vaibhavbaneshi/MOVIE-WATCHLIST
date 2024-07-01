@@ -12,6 +12,8 @@ function MovieList() {
     setEditingMovie(movie);
   };
   
+  console.log(movies);
+
   return (
     <div>
       <h2>My Watchlist</h2>

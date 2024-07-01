@@ -23,24 +23,33 @@ function Movie({ movie, onEdit }) {
     dispatch({ type: 'REVIEW_MOVIE', payload: { id: movie.id, review } });
   };
 
+  console.log(movie);
+
   return (
     <div className="movie-item">
-      <h3 className='app-header'>{movie.title}</h3>
-      <p><b>{movie.description}</b></p>
-      <p>Release Year: <b>{movie.releaseYear}</b></p>
-      <p>Genre: <b>{movie.genre}</b></p>
-      <p>Watched: <b>{movie.watched ? 'Yes' : 'No'}</b></p>
-      <div>
-        Rating: 
-        {[1, 2, 3, 4, 5].map(star => (
-          <span 
-            key={star} 
-            onClick={() => handleRating(star)}
-            style={{marginLeft: '3px',cursor: 'pointer', color: star <= movie.rating ? 'gold' : 'gray'}}
-          >
-            ★
-          </span>
-        ))}
+      <div className='flex justify-center'>
+        <div>
+          <h3 className='app-header'>{movie.title}</h3>
+          <p><b>{movie.description}</b></p>
+          <p>Release Year: <b>{movie.releaseYear}</b></p>
+          <p>Genre: <b>{movie.genre}</b></p>
+          <p>Watched: <b>{movie.watched ? 'Yes' : 'No'}</b></p>
+
+          Rating: 
+          {[1, 2, 3, 4, 5].map(star => (
+            <span 
+              key={star} 
+              onClick={() => handleRating(star)}
+              style={{marginLeft: '3px',cursor: 'pointer', color: star <= movie.rating ? 'gold' : 'gray'}}
+            >
+              ★
+            </span>
+          ))}
+        </div>
+
+        <div>
+          <img src={movie.poster} alt="" />
+        </div>
       </div>
       <div>
         <textarea style={{width: '97%', height: '100px', marginTop: '10px'}}

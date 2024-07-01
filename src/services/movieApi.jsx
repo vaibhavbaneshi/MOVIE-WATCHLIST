@@ -1,4 +1,4 @@
-const apiKey = '8eff6285';
+const apiKey = '80ca5599';
 const apiUrl = 'http://www.omdbapi.com/';
 
 export const searchMovies = async (searchValue) => {

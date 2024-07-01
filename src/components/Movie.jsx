@@ -5,8 +5,22 @@ function Movie({ movie, onEdit }) {
   const dispatch = useDispatch();
   const [review, setReview] = useState(movie.review);
 
+  const handleDelete = () => {
+    if (window.confirm('Are you sure you want to delete this movie?')) {
+      dispatch({ type: 'DELETE_MOVIE', payload: movie.id });
+    }
+  };
+
+  const handleToggleWatched = () => {
+    dispatch({ type: 'TOGGLE_WATCHED', payload: movie.id });
+  };
+
   const handleRating = (rating) => {
     dispatch({ type: 'RATE_MOVIE', payload: { id: movie.id, rating } });
+  };
+
+  const handleReview = () => {
+    dispatch({ type: 'REVIEW_MOVIE', payload: { id: movie.id, review } });
   };
 
   return (

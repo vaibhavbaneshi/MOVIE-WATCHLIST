@@ -28,6 +28,19 @@ function Movie({ movie, onEdit }) {
           </span>
         ))}
       </div>
+      <div>
+        <textarea style={{width: '97%', height: '100px', marginTop: '10px'}}
+          value={review} 
+          onChange={(e) => setReview(e.target.value)}
+          placeholder="Write a review..."
+        />
+        <button onClick={handleReview}>Save Review</button>
+      </div>
+      <button onClick={() => onEdit(movie)}>Edit</button>
+      <button className='del-btn' onClick={handleDelete}>Delete</button>
+      <button onClick={handleToggleWatched}>
+        Mark as {movie.watched ? 'Unwatched' : 'Watched'}
+      </button>
     </div>
   );
 }

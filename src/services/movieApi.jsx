@@ -2,7 +2,7 @@ const apiKey = '80ca5599';
 const apiUrl = 'http://www.omdbapi.com/';
 
 export const searchMovies = async (searchValue) => {
-  const url = `${apiUrl}?s=${encodeURIComponent(searchValue)}&apikey=${apiKey}`;
+  const url = `https://www.omdbapi.com/?s=${searchValue}&type=movie&apikey=6a616cc4`;
 
   try {
     const response = await fetch(url);
